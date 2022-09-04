@@ -1,0 +1,33 @@
+.features{
+    
+    grid-column: center-start / center-end;
+    margin: 15rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 6rem;
+    align-items: start;  // By default the align items is stretch but we change it to start so that the paragraph in the items will all be //
+                         // equal irrespective of the number of text.
+}
+
+.feature {
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+    
+
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1 / span 2;  // We did not use 1 / -1 becuse we did not specify grid row esxplicitly. so it is better to use span.
+        transform: translateY(-1rem); // To make the icon move upward a little.
+
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+}
